@@ -10,16 +10,28 @@
 
 <body>
     <div class="container text-center">
-        <h1 class="btn btn-danger text-center animated bounce"><i class="fa fa-gamepad" aria-hidden="true">Play</i></h1>
+        <svg width="50" height="50" class="animated rubberBand">
+             <circle cx="25" cy="25" r="25" fill="red" />
+        </svg>
     </div>
 
     <div class="container text-center">
-        <h1 class="btn btn-info text-center animated bounceInRight"><i class="fa fa-blind" aria-hidden="true">Run</i></h1>
+        <svg width="50" height="50" class="animated rubberBand">
+             <circle cx="25" cy="25" r="25" fill="green" />
+        </svg>
     </div>
 
     <div class="container text-center">
-        <h1 class="btn btn-warning text-center animated fadeInUp"><i class="fa fa-eye" aria-hidden="true">See</i></h1>
+        <svg width="50" height="50" class="animated rubberBand">
+             <circle cx="25" cy="25" r="25" fill="blue" />
+        </svg>
     </div>
+
+    <div class="container text-center">
+        <svg width="50" height="50" class="animated rubberBand">
+             <circle cx="25" cy="25" r="25" fill="yellow" />
+        </svg>
+    </div>    
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
@@ -27,23 +39,25 @@
        //this works, follow pattern
    $(function(){
        //variables added to reduce repetition
-      var bounceClass ='animated bounceOutLeft';
-      var flipClass ='animated flip';
+      var bounceClass ='animated jello';
+      var flipClass ='animated shake';
       var endClass ='webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
       //this makes the buttons animate when clicked
-      $('h1.btn').on({
+      $('svg').on({
           'click': function(){
-              $('h1.btn').addClass(bounceClass).one(endClass, function(){
+              $('svg').addClass(bounceClass).one(endClass, function(){
                   $(this).removeClass(bounceClass);
               })
           },
       //this makes the buttons animate when hovering over them via the mouse
           'mouseover': function(){
-              $('h1.btn').addClass(flipClass).one(endClass, function(){
+              $('svg').addClass(flipClass).one(endClass, function(){
                   $(this).removeClass(flipClass);
               })
           }
+
       });
+
    });
 </script>
 
